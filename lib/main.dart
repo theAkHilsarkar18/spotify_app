@@ -4,6 +4,7 @@ import 'package:spotify_app/screens/basecsreen/provider/baseprovider.dart';
 import 'package:spotify_app/screens/basecsreen/view/basescreen.dart';
 import 'package:spotify_app/screens/homescreen/provider/homeprovider.dart';
 import 'package:spotify_app/screens/homescreen/view/homescreen.dart';
+import 'package:spotify_app/screens/openscreen/view/opnescreen.dart';
 
 void main()
 {
@@ -15,8 +16,9 @@ void main()
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: {
-          '/' : (context) => Basescreen(),
+          '/' : (context) => Openscreen(),
           'home' : (context) => Homescreen(),
+          'open' : (context) => Openscreen(),
         },
       ),
     ),

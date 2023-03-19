@@ -27,17 +27,17 @@ class _BasescreenState extends State<Basescreen> {
         backgroundColor: Colors.black,
         body: Homescreen(),
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.black12,
+          backgroundColor: Colors.black,
           currentIndex: baseproviderTrue!.navigationIndex,
           onTap: (value) {
             baseproviderFalse!.onNavigationTap(value);
             print("${baseproviderTrue!.navigationIndex}");
           },
           items: [
-            BottomNavigationBarItem(icon: IconButton(onPressed: () {},icon: Icon(Icons.home_outlined),),label: "Home",backgroundColor: Colors.white12),
-            BottomNavigationBarItem(icon: IconButton(onPressed: () {},icon: Icon(Icons.search),),label: "Search",backgroundColor: Colors.white12),
-            BottomNavigationBarItem(icon: IconButton(onPressed: () {},icon: Icon(Icons.library_music_outlined),),label: "Library",backgroundColor: Colors.white12),
-            BottomNavigationBarItem(icon: IconButton(onPressed: () {},icon: Icon(Icons.person_outline),),label: "Profile",backgroundColor: Colors.white12),
+            BottomNavigationBarItem(icon: IconButton(onPressed: () {},icon: Icon(Icons.home_outlined),),label: "Home",backgroundColor: Colors.black),
+            BottomNavigationBarItem(icon: IconButton(onPressed: () {},icon: Icon(Icons.search),),label: "Search",backgroundColor: Colors.black),
+            BottomNavigationBarItem(icon: IconButton(onPressed: () {},icon: Icon(Icons.library_music_outlined),),label: "Library",backgroundColor: Colors.black),
+            BottomNavigationBarItem(icon: IconButton(onPressed: () {},icon: Icon(Icons.person_outline),),label: "Profile",backgroundColor: Colors.black),
           ],
         ),
       ),

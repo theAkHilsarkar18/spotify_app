@@ -15,12 +15,16 @@ class _HomescreenState extends State<Homescreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          title: Image.asset("assets/logo/sptf.png",height: 80,),
+          //centerTitle: true,
+          backgroundColor: Colors.black,
+        ),
         backgroundColor: Colors.black,
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: ListView(
             children: [
-              SizedBox(height: 10,),
               Row(
                 children: [
                   Column(
@@ -32,20 +36,22 @@ class _HomescreenState extends State<Homescreen> {
                     ],
                   ),
                   Spacer(),
-                  Container(
-                    alignment: Alignment.center,
-                    height: 40,
-                    width: 40,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade900,
-                      shape: BoxShape.circle
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade900,
+                        shape: BoxShape.circle
+                      ),
+                      child: Icon(Icons.notification_add_outlined,color: Colors.grey),
                     ),
-                    child: Icon(Icons.notification_add_outlined,color: Colors.grey),
                   ),
                   SizedBox(width: 10,),
                 ],
               ),
-              SizedBox(height: 20,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -57,7 +63,7 @@ class _HomescreenState extends State<Homescreen> {
                 ),
               ),
               SizedBox(height: 5,),
-              Container(height: 115,child: ListView.builder(itemBuilder: (context, index) => singerBox(singerImg[index],singerName[index]),itemCount: singerImg.length,shrinkWrap: true,scrollDirection: Axis.horizontal,)),
+              Container(height: 120,child: ListView.builder(itemBuilder: (context, index) => singerBox(singerImg[index],singerName[index]),itemCount: singerImg.length,shrinkWrap: true,scrollDirection: Axis.horizontal,)),
               SizedBox(height: 10,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -82,19 +88,19 @@ class _HomescreenState extends State<Homescreen> {
                   ],
                 ),
               ),
-              Container(height: 160,child: ListView.builder(itemBuilder: (context, index) => songBox(playlistImg[index],playlistName[index]),itemCount: playlistImg.length,shrinkWrap: true,scrollDirection: Axis.horizontal,)),
+              Container(height: 160,child: ListView.builder(itemBuilder: (context, index) => songBox(playlistImg2[index],playlistName2[index]),itemCount: playlistImg2.length,shrinkWrap: true,scrollDirection: Axis.horizontal,)),
               SizedBox(height: 10,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Made for you",style: GoogleFonts.poppins(color: Colors.white)),
+                    Text("From Best Actress",style: GoogleFonts.poppins(color: Colors.white)),
                     Icon(Icons.navigate_next,color: Colors.white,),
                   ],
                 ),
               ),
-              Container(height: 160,child: ListView.builder(itemBuilder: (context, index) => songBox(playlistImg[index],playlistName[index]),itemCount: playlistImg.length,shrinkWrap: true,scrollDirection: Axis.horizontal,)),
+              Container(height: 160,child: ListView.builder(itemBuilder: (context, index) => songBox(playlistImg3[index],playlistName3[index]),itemCount: playlistImg3.length,shrinkWrap: true,scrollDirection: Axis.horizontal,)),
 
             ],
           ),
@@ -112,8 +118,8 @@ class _HomescreenState extends State<Homescreen> {
       children: [
         Container(
           margin: EdgeInsets.all(5),
-          height: 80,
-          width: 80,
+          height: 90,
+          width: 90,
           decoration: BoxDecoration(
             color: Colors.white,
             shape: BoxShape.circle,
