@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:spotify_app/screens/musicscreen/provider/musicprovider.dart';
 import 'package:spotify_app/utils/image/playlist/playlist.dart';
 import 'package:spotify_app/utils/image/singer/singerImg.dart';
 
@@ -11,6 +13,7 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
+  
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -63,7 +66,12 @@ class _HomescreenState extends State<Homescreen> {
                 ),
               ),
               SizedBox(height: 5,),
-              Container(height: 120,child: ListView.builder(itemBuilder: (context, index) => singerBox(singerImg[index],singerName[index]),itemCount: singerImg.length,shrinkWrap: true,scrollDirection: Axis.horizontal,)),
+              Container(height: 120,child: ListView.builder(itemBuilder: (context, index) => InkWell(onTap: () {
+
+                Provider.of<Musicprovider>(context,listen: false).initAudio(index);
+                Navigator.pushNamed(context, 'open',arguments: index);
+
+              },child: singerBox(singerImg[index],singerName[index])),itemCount: singerImg.length,shrinkWrap: true,scrollDirection: Axis.horizontal,)),
               SizedBox(height: 10,),
               Padding(
                 padding: const EdgeInsets.all(8.0),

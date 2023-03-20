@@ -12,6 +12,8 @@ List singerImg = [
   "assets/singer/sg.jpg",
 ];
 
+
+
 List singerName = [
   "AR Rah..",
   "Arijit..",

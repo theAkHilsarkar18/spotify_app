@@ -38,6 +38,7 @@ dependencies:
   provider: ^6.0.5
   assets_audio_player: ^3.0.6
   google_fonts: ^4.0.3
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +70,7 @@ flutter:
     - assets/singer/
     - assets/playlist/
     - assets/logo/
+    - assets/song/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

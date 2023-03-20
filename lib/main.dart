@@ -4,6 +4,7 @@ import 'package:spotify_app/screens/basecsreen/provider/baseprovider.dart';
 import 'package:spotify_app/screens/basecsreen/view/basescreen.dart';
 import 'package:spotify_app/screens/homescreen/provider/homeprovider.dart';
 import 'package:spotify_app/screens/homescreen/view/homescreen.dart';
+import 'package:spotify_app/screens/musicscreen/provider/musicprovider.dart';
 import 'package:spotify_app/screens/openscreen/view/opnescreen.dart';
 
 void main()
@@ -12,11 +13,13 @@ void main()
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => Baseprovider(),),
+        ChangeNotifierProvider(create: (context) => Homeprovider(),),
+        ChangeNotifierProvider(create: (context) => Musicprovider(),),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: {
-          '/' : (context) => Openscreen(),
+          '/' : (context) => Basescreen(),
           'home' : (context) => Homescreen(),
           'open' : (context) => Openscreen(),
         },
