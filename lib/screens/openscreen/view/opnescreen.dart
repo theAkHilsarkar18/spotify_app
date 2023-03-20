@@ -56,8 +56,13 @@ class _OpenscreenState extends State<Openscreen> {
                   SizedBox(
                     width: 5,
                   ),
-                  Icon(Icons.keyboard_arrow_down_outlined,
-                      color: Colors.grey.shade300, size: 30),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(Icons.keyboard_arrow_down_outlined,
+                        color: Colors.grey.shade300, size: 30),
+                  ),
                   Spacer(),
                   Icon(Icons.share, color: Colors.grey.shade300, size: 25),
                   SizedBox(

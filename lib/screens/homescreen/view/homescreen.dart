@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -55,6 +56,7 @@ class _HomescreenState extends State<Homescreen> {
                   SizedBox(width: 10,),
                 ],
               ),
+              SizedBox(height: 10,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -84,8 +86,17 @@ class _HomescreenState extends State<Homescreen> {
                 ),
               ),
               SizedBox(height: 5,),
-              Container(height: 160,child: ListView.builder(itemBuilder: (context, index) => songBox(playlistImg[index],playlistName[index]),itemCount: playlistImg.length,shrinkWrap: true,scrollDirection: Axis.horizontal,)),
-              SizedBox(height: 10,),
+              CarouselSlider.builder(itemCount: playlistImg.length, itemBuilder: (context, index, realIndex) => InkWell(onTap: () {
+
+                Navigator.pushNamed(context, 'playlist');
+
+              },child: songBox(playlistImg[index],playlistName[index])),options: CarouselOptions(scrollDirection: Axis.horizontal,autoPlay: true,viewportFraction: 0.39,scrollPhysics: BouncingScrollPhysics(),)),
+              // Container(height: 160,child: ListView.builder(itemBuilder: (context, index) => InkWell(onTap: () {
+              //
+              //   Navigator.pushNamed(context, 'playlist');
+              //
+              // },child: songBox(playlistImg[index],playlistName[index])),itemCount: playlistImg.length,shrinkWrap: true,scrollDirection: Axis.horizontal,)),
+              // SizedBox(height: 10,),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -96,6 +107,7 @@ class _HomescreenState extends State<Homescreen> {
                   ],
                 ),
               ),
+              SizedBox(height: 10,),
               Container(height: 160,child: ListView.builder(itemBuilder: (context, index) => songBox(playlistImg2[index],playlistName2[index]),itemCount: playlistImg2.length,shrinkWrap: true,scrollDirection: Axis.horizontal,)),
               SizedBox(height: 10,),
               Padding(
@@ -108,6 +120,7 @@ class _HomescreenState extends State<Homescreen> {
                   ],
                 ),
               ),
+              SizedBox(height: 10,),
               Container(height: 160,child: ListView.builder(itemBuilder: (context, index) => songBox(playlistImg3[index],playlistName3[index]),itemCount: playlistImg3.length,shrinkWrap: true,scrollDirection: Axis.horizontal,)),
 
             ],
